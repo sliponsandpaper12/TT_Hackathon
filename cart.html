@@ -30,16 +30,19 @@
             font-weight: bold;
         }
         #amigos {
-            margin-top: -280px;
+            margin-top: -270px;
         }
         #head .row {
-            height: 75px;
+            height: 70px;
         }
         #tail .row {
             height:10px;
         }
         button  {
-            margin-top: 15px;
+            margin-top: 10px;
+        }
+        .card {
+            width: 150px;
         }
      
     </style>
@@ -66,9 +69,9 @@
 
     <div class="bg-light rounded mt-4">  
         <div class="text-center">
-            <img class="text-center m-5" src="assets/shoppingbag.png">
+            <img class="text-center m-4" src="assets/shoppingbag.png">
         </div>
-        <p class="text-center display-8" style="margin-top: -35px; padding-bottom: 50px;">No items in your cart :(</p>
+        <p class="text-center display-8" style="margin-top: -20px; padding-bottom: 30px;">No items in your cart :(</p>
     </div>
 
     <div class="container-fluid" id="tail">
@@ -79,19 +82,31 @@
         <p class="text-center">Recommended for you</p>
     </div>
 
-    <div class="d-inline">
-        <div class="card" style="width: 18rem;">
-            <img src="assets/phonecase.png" class="rounded-circle">
-            <div class="card-body">
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 card p-2 border-0 shadow mx-auto">
+                <img src="assets/phonecase.png" class="rounded-circle h-100">
+                <div>
+                <a href="#" class="stretched-link" id="phonecase"></a>
+                </div>
             </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img src="assets/pants.png" class="rounded-circle">
-            <div class="card-body">
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="col-6 card p-2 border-0 shadow mx-auto">
+                <img src="assets/pants.png" class="rounded-circle h-100">
+                <div>
+                    <a href="#" class="stretched-link" id="pants"></a>
+                </div>
             </div>
-          </div>
+        </div>
+        <div class="row">
+            <div class="col-6 text-center">
+                <img src="assets/star.png">
+                <label for="phonecase">4.5</label>
+            </div>
+            <div class="col-6 text-center">
+                <img src="assets/star.png">
+                <label for="pants">4.5</label>
+            </div>
+        </div>
     </div>
 
 </body>
