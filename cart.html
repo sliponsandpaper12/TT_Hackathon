@@ -4,7 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <style>
+        html {
+            display: table;
+            margin: auto;
+        }
+        body {
+            width: 390px;
+            display: table-cell;
+            vertical-align: middle;
+        }
         .btn {
             display: flex;
             width: 175px;
@@ -17,24 +27,72 @@
             background: #6F6E8D;
             color: white;
             border: none;
+            font-weight: bold;
         }
+        #amigos {
+            margin-top: -280px;
+        }
+        #head .row {
+            height: 75px;
+        }
+        #tail .row {
+            height:10px;
+        }
+        button  {
+            margin-top: 15px;
+        }
+     
     </style>
 </head>
 <body>
-    <div style="width: 390px; height: 310px;">
-    <div style="width: 390px; height: 78px; left: 0px; top: 0px; background: #EE1E52"></div>
-    <div style="width: 390px; height: 78px; left: 0px; top: 154px; background: #69C9D0"></div>
-    <div style="width: 390px; height: 78px; left: 0px; top: 75.50px; background: white"></div>
-    <div style="width: 390px; height: 78px; left: 0px; top: 232px; background: #010101; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px"></div>
+    <div class="container-fluid" id="head">
+        <div class="row" style="background-color: #EE1E52;"></div>
+        <div class="row" style="background-color: white;"></div>
+        <div class="row" style="background-color: #69C9D0;"></div>
+        <div class="row" style="background-color: black; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;"></div>
     </div>
 
-    <div class="text-center">
-        <button class="btn">Group Buy ></button>
-    </div>
-
-    <div>
-        <img src="assets/shoppingbag.png">
+    <div class="text-center" id="amigos">
+        <img src="assets/illustration.png">
     </div>
     
+    <div class="container-fluid">
+        <div class="d-flex">
+            <div class="align-self-center mx-auto">
+                <button type="button" class="btn">Group Buy ></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-light rounded mt-4">  
+        <div class="text-center">
+            <img class="text-center m-5" src="assets/shoppingbag.png">
+        </div>
+        <p class="text-center display-8" style="margin-top: -35px; padding-bottom: 50px;">No items in your cart :(</p>
+    </div>
+
+    <div class="container-fluid" id="tail">
+        <div class="row" style="background-color: #EE1E52;"></div>
+    </div>
+
+    <div class="fw-bold mt-3">
+        <p class="text-center">Recommended for you</p>
+    </div>
+
+    <div class="d-inline">
+        <div class="card" style="width: 18rem;">
+            <img src="assets/phonecase.png" class="rounded-circle">
+            <div class="card-body">
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="assets/pants.png" class="rounded-circle">
+            <div class="card-body">
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </div>
+
 </body>
 </html>
