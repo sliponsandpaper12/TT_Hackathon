@@ -59,21 +59,54 @@
         <img src="assets/illustration.png">
     </div>
     
-    <div class="container" id="tail">
-        <div class="search_wrap search_wrap_3">
-            <div class="search_box">
-                <input type="text" class="input" placeholder="Search by Product Name" style="background-color:lightgrey; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
-                <div class="button btn_common">
-                    <i class="fas fa-search"></i>
-                </div>
+    <div class="container-fluid">
+        <div class="d-flex">
+            <div class="align-self-center mx-auto">
+                <button type="button" class="btn">Group Buy ></button>
             </div>
         </div>
-       
+    </div>
+
+    <div class="bg-light rounded mt-4">  
+        <div class="text-center">
+            <img class="text-center m-4" src="assets/shoppingbag.png">
+        </div>
+        <p class="text-center display-8" style="margin-top: -20px; padding-bottom: 30px;">No items in your cart :(</p>
     </div>
 
     <div class="container-fluid" id="tail">
         <div class="row" style="background-color: #EE1E52;"></div>
     </div>
+
+    <div class="fw-bold mt-3">
+        <p class="text-center">Recommended for you</p>
+    </div>
+
+    <div class="container-fluid">
+        <div onclick="window.location.href='shop.html'" class="row">
+            <div class="col-6 card p-2 border-0 shadow mx-auto">
+                <img src="assets/phonecase.png" class="rounded-circle h-100">
+                <div>
+                <a href="#" class="stretched-link" id="phonecase"></a>
+                </div>
+            </div>
+            <div class="col-6 card p-2 border-0 shadow mx-auto">
+                <img src="assets/pants.png" class="rounded-circle h-100">
+                <div>
+                    <a href="#" class="stretched-link" id="pants"></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 text-center">
+                <img src="assets/star.png">
+                <label for="phonecase">4.5</label>
+            </div>
+            <div class="col-6 text-center">
+                <img src="assets/star.png">
+                <label for="pants">4.5</label>
+            </div>
+        </div>
     </div>
 
     
