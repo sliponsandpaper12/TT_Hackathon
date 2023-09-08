@@ -27,6 +27,11 @@
             width: 350px;
             margin-top: 70px;
         }
+        .order {
+            background-color: #F4F4F4;
+            height: 100px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -51,7 +56,7 @@
         <div class="row">
             <p class="text-center" style="margin-top: -10px;">Order Confirmed: Order #<span id="num"></span></p>
         </div>
-        <div class="row">
+        <div class="container-fluid">
             <p id="receipt"></p>
         </div>
     </div>
@@ -65,10 +70,14 @@
 
 <script>
     let order = {"Aaron":["Pants"], "Bryan":["Pants", "Umbrella"]};
-    // const price = {Pants:12, Umbrella:10};
-    for (person in Object.keys(order)) {
-        name = Object.keys(order)[person];
-        document.getElementbyId("receipt").innerHTML += "<p>"+name+"</p>";
+    const price = {Pants:12, Umbrella:10};
+    for (person of Object.keys(order)) {
+        let order_num = order[person].length;
+        document.getElementById("receipt").innerHTML += `<div class="row order rounded" id="${person}"></div>`;
+        document.getElementById(person).innerHTML += `<div class="col-12 h6 mt-1">${person}</div>`;
+        document.getElementById(person).innerHTML += "<div class='col-12 d-flex justify-content-center'><hr class='divider' style='width: 100%; margin-top: -20px;'></div>";
+        document.getElementById(person).innerHTML += `<div class='col-6 fw-bold d-flex justify-content-start'>Items Bought: ${order_num}</div>`;
+        document.getElementById(person).innerHTML += `<div class='col-6 fw-bold d-flex justify-content-end'>Subtotal:</div>`;
     }
 </script>
 
