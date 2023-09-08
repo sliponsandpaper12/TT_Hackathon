@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart</title>
+    <title>GroupCart</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <style>
         html {
@@ -53,21 +53,37 @@
         <div class="row" style="background-color: white;"></div>
         <div class="row" style="background-color: #69C9D0;"></div>
         <div class="row" style="background-color: black; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;"></div>
-    </div>
-
-    <div class="text-center" id="amigos">
-        <img src="assets/illustration.png">
-    </div>
-    
-    <div class="container-fluid">
-        <div class="d-flex">
-            <div class="align-self-right mx-auto">
-                <button onclick="window.location.href='group_buy_invitation.html'" type="button" class="btn">Invite More ></button>
+        <div class="text-center" id="amigos">
+            <img src="assets/illustration.png">
+        </div>
+        <div class="row">
+            <div class="col-6">
             </div>
+            <button onclick="window.location.href='group_buy_invitation.html'" type="button" class="btn">Invite More ></button>
         </div>
     </div>
 
+    <div id="carts" class="container">
+    
+    </div>
+    
+    <div id="num">
 
+    </div>
+
+    <script>
+        let people = ['Person A', 'Person B'];
+        let carts = {'Person A': ['Pants'], 'Person B': ['Mini Folding Umbrella']}
+        // const price = {Pants:12, Umbrella:10};
+        for (person of people) {
+            items = carts[person];
+            let result = "<div class='row'>" + person + '</div>' + "<div class='row'>";
+            for(item of items);
+                result += "<div class='col-10 p-3 border-0 shadow mx-auto'> <img src='assets/" + item +".png' class='rounded-circle h-100'><text>" + item + "</text> [<1>]"
+            result += '</div>'
+            document.getElementById("carts").innerHTML += result;
+        }
+    </script>
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
