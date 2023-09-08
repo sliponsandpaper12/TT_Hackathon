@@ -71,15 +71,19 @@
 
     </div>
 
+    <div class="container">
+        <button onclick="window.location.href='payment.html'" type="button" class="btn">Proceed></button>
+    </div>
+
     <script>
         let people = ['Person A', 'Person B'];
         let carts = {'Person A': ['Pants'], 'Person B': ['Mini Folding Umbrella']}
         // const price = {Pants:12, Umbrella:10};
         for (person of people) {
             items = carts[person];
-            let result = "<div class='row'>" + person + '</div>' + "<div class='row'>";
+            let result = "<div class='row'>" + person + "'s cart</div>" + "<div class='row'>";
             for(item of items);
-                result += "<div class='col-10 p-3 border-0 shadow mx-auto'> <img src='assets/" + item +".png' class='rounded-circle h-100'><text>    " + item + "</text> [<1>]"
+                result += "<div class='col-10 p-3 border-0 shadow mx-auto'> <img src='assets/" + item +".png' class='rounded-circle h-100'><text>" + item + "[<1>]</text>"
             result += '</div>'
             document.getElementById("carts").innerHTML += result;
         }
