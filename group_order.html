@@ -79,7 +79,7 @@
             items = carts[person];
             let result = "<div class='row'>" + person + '</div>' + "<div class='row'>";
             for(item of items);
-                result += "<div class='col-10 p-3 border-0 shadow mx-auto'> <img src='assets/" + item +".png' class='rounded-circle h-100'><text>" + item + "</text> [<1>]"
+                result += "<div class='col-10 p-3 border-0 shadow mx-auto'> <img src='assets/" + item +".png' class='rounded-circle h-100'><text>    " + item + "</text> [<1>]"
             result += '</div>'
             document.getElementById("carts").innerHTML += result;
         }
