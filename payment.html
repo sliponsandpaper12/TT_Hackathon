@@ -64,10 +64,11 @@
 </script>
 
 <script>
-    let order = {Aaron:[Pants], Bryan:[Pants, Umbrella]};
+    let order = {"Aaron":["Pants"], "Bryan":["Pants", "Umbrella"]};
     // const price = {Pants:12, Umbrella:10};
-    for (i in order.keys) {
-        document.getElementbyId("receipt").innerHTML += i;
+    for (person in Object.keys(order)) {
+        name = Object.keys(order)[person];
+        document.getElementbyId("receipt").innerHTML += "<p>"+name+"</p>";
     }
 </script>
 
