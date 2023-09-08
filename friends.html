@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Friends</title>
+    <style>
+        .friend-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .profile-picture {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+            background-color: lightgray; /* You can set the background image here */            
+            
+            display: flex;
+            justify-content: center; /* Horizontally center text */
+            align-items: center; /* Vertically center text */
+        }
+    </style>
+</head>
+<body>
+    <div id="recommended-friends-container">
+        <!-- JavaScript will populate this container with recommended friends -->
+    </div>
+
+    <script>
+        class Person {
+            constructor(userID) {
+                this.userID = userID;
+                this.friendID = [];
+            }
+
+            getUserID() {
+                return this.userID;
+            }
+
+            getFriendID() {
+                if (this.friendID.length === 0) {
+                    alert('Wow, you have no friends... but it\'s okay, we have a list of suggestions for you!');
+                    return [];
+                }
+                return this.friendID;
+            }
+
+            newFriend(fid) {
+                if (this.friendID.indexOf(fid) === -1) {
+                    this.friendID.push(fid);
+                    alert('Friend added!');
+                }
+            }
+
+            unfriend(fid) {
+                const exist = this.friendID.indexOf(fid);
+                if (exist !== -1) {
+                    this.friendID.splice(exist, 1);
+                    alert('Successfully unfriended!');
+                }
+            }
+        }
+
+        // Create a new Person instance (replace 'user10' with a unique username)
+        const user10 = new Person("user10");
+
+        // Get the recommended friends container element
+        const recommendedFriendsContainer = document.getElementById("recommended-friends-container");
+
+        // Sample recommended friend IDs (replace with real user IDs)
+        const recommendedFriendIDs = ["alice", "bob", "charlie", "dave", "eve", "frank", "grace", "helen", "ian"];
+
+        // Loop through the recommended friend IDs and generate rows
+        recommendedFriendIDs.forEach(userID => {
+            const friendRow = document.createElement("div");
+            friendRow.classList.add("friend-row");
+            friendRow.innerHTML = `
+                <div class="profile-picture" style="background-color: ${getRandomColor()}">${userID[0].toUpperCase()}</div>
+                <div class="friend-name">${userID}</div>
+            `;
+            recommendedFriendsContainer.appendChild(friendRow);
+        });
+
+        // Function to generate a random hex color code
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>
