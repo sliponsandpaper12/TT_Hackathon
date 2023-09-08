@@ -49,17 +49,27 @@
             <hr class="divider" style="width: 90%; margin-top: -10px;">
         </div>
         <div class="row">
-            <p>Order Confirmed: Order #<span id="num"></span></div></p>
+            <p class="text-center" style="margin-top: -10px;">Order Confirmed: Order #<span id="num"></span></p>
+        </div>
+        <div class="row">
+            <p id="receipt"></p>
         </div>
     </div>
-
-    <script>
-        let order = {Aaron:[Pants], Bryan:[Pants, Umbrella]};
-        let num = 123;
-        const price = {Pants:12, Umbrella:10};
-        document.getElementById("num").innerHTML = num;
-    </script>
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
 </body>
+<script>
+    let num = 123;
+    document.getElementById("num").innerHTML = num;
+</script>
+
+<script>
+    let order = {Aaron:[Pants], Bryan:[Pants, Umbrella]};
+    // const price = {Pants:12, Umbrella:10};
+    for (i in order.keys) {
+        document.getElementbyId("receipt").innerHTML += i;
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </html>
