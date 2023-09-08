@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart</title>
+    <title>GroupCart</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <style>
         html {
@@ -53,62 +53,41 @@
         <div class="row" style="background-color: white;"></div>
         <div class="row" style="background-color: #69C9D0;"></div>
         <div class="row" style="background-color: black; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;"></div>
-    </div>
-
-    <div class="text-center" id="amigos">
-        <img src="assets/illustration.png">
-    </div>
-    
-    <div class="container-fluid">
-        <div class="d-flex">
-            <div class="align-self-center mx-auto">
-                <button onclick="window.location.href='group_buy_invitation.html'" type="button" class="btn">Group Buy ></button>
-            </div>
-        </div>
-    </div>
-
-    <div class="bg-light rounded mt-4">  
-        <div class="text-center">
-            <img class="text-center m-4" src="assets/shoppingbag.png">
-        </div>
-        <p class="text-center display-8" style="margin-top: -20px; padding-bottom: 30px;">No items in your cart :(</p>
-    </div>
-
-    <div class="container-fluid" id="tail">
-        <div class="row" style="background-color: #EE1E52;"></div>
-    </div>
-
-    <div class="fw-bold mt-3">
-        <p class="text-center">Recommended for you</p>
-    </div>
-
-    <div class="container-fluid">
-        <div onclick="window.location.href='shop.html'" class="row">
-            <div class="col-6 card p-2 border-0 shadow mx-auto">
-                <img src="assets/phonecase.png" class="rounded-circle h-100">
-                <div>
-                <a href="#" class="stretched-link" id="phonecase"></a>
-                </div>
-            </div>
-            <div class="col-6 card p-2 border-0 shadow mx-auto">
-                <img src="assets/pants.png" class="rounded-circle h-100">
-                <div>
-                    <a href="#" class="stretched-link" id="pants"></a>
-                </div>
-            </div>
+        <div class="text-center" id="amigos">
+            <img src="assets/illustration.png">
         </div>
         <div class="row">
-            <div class="col-6 text-center">
-                <img src="assets/star.png">
-                <label for="phonecase">4.5</label>
+            <div class="col-6">
             </div>
-            <div class="col-6 text-center">
-                <img src="assets/star.png">
-                <label for="pants">4.5</label>
-            </div>
+            <button onclick="window.location.href='group_buy_invitation.html'" type="button" class="btn">Invite More ></button>
         </div>
     </div>
 
+    <div id="carts" class="container">
+    
+    </div>
+    
+    <div id="num">
+
+    </div>
+
+    <div class="container">
+        <button onclick="window.location.href='payment.html'" type="button" class="btn">Proceed></button>
+    </div>
+
+    <script>
+        let people = ['Person A', 'Person B'];
+        let carts = {'Person A': ['Pants'], 'Person B': ['Mini Folding Umbrella']}
+        // const price = {Pants:12, Umbrella:10};
+        for (person of people) {
+            items = carts[person];
+            let result = "<div class='row'>" + person + "'s cart</div>" + "<div class='row'>";
+            for(item of items);
+                result += "<div class='col-10 p-3 border-0 shadow mx-auto'> <img src='assets/" + item +".png' class='rounded-circle h-100'><text>" + item + "[<1>]</text>"
+            result += '</div>'
+            document.getElementById("carts").innerHTML += result;
+        }
+    </script>
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
