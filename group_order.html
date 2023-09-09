@@ -122,8 +122,9 @@
                 result += "<div class='row border-0 shadow mx-auto rounded-3' style='height: 100px'>";
                 result += "<div class='col'><img style='width: 100%; margin-top: 13px;' src='assets/" + item +".png' class='rounded-circle'></div>";
                 result += "<div class='col-9 mt-2'><div>" + item + "</div>";
-                result += `<div><div class='d-inline-block'><button class='border-1 bg-transparent rounded-3 me-3' onclick='remove(items, item)'>-</button>${no_items}<button class='border-1 bg-transparent rounded-3 ms-3' onclick='add(items, item)'>+</button></div><div class='d-inline-block ms-5'>$${subtotal}</div></div></div>`;
+                result += `<div><div class='d-inline-block'><button class='border-1 bg-transparent rounded-3 me-3' onclick='remove(items, item)' id='${item}'>-</button>${no_items}<button class='border-1 bg-transparent rounded-3 ms-3' onclick='add(items, item)' id='${item}'>+</button></div><div class='d-inline-block ms-5'>$${subtotal}</div></div></div>`;
                 result += "</div>";
+                console.log(items);
             result += '</div>'
             document.getElementById("carts").innerHTML += result;
         }
@@ -134,13 +135,17 @@
             confirm("Delete Order?");
         }
         function add(arr, item) {
+            let item = button.id;
             arr.push(item);
+            console.log(arr);
         }
         function remove(arr, item) {
+            let item = button.id;
             var index = arr.indexOf(item);
             if (index > -1) {
                 arr.splice(index, 1)
             };
+            console.log(arr);
         }
     </script>
 
