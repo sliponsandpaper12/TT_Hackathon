@@ -56,6 +56,10 @@
         .icon-link {
             margin: 10px;
         }
+        #back {
+            margin-top: 60px;
+            margin-bottom: -60px;
+        }
     </style>
 </head>
 <body>
@@ -68,6 +72,12 @@
 
     <div class="text-center" id="amigos">
         <img src="assets/amigos_shopping.png">
+    </div>
+
+    <div id="back">
+        <a href="group_order.html">
+            <img src="assets/back.png">
+        </a>
     </div>
 
     <div class="container-fluid rounded" id="summary">
@@ -119,7 +129,7 @@
 </script>
 
 <script>
-    let order = {"Aaron":["Pants"], "Bryan":["Pants", "Umbrella"]};
+    let order = {"alice":["Pants"], "bob":["Pants", "Umbrella"]};
     const price = {Pants:12, Umbrella:10};
     let total = 0;
     for (person of Object.keys(order)) {
